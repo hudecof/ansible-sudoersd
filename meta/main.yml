@@ -1,17 +1,23 @@
 ---
 galaxy_info:
-  author: Martin Chlumsky
+  role_name: sudoersd
+  author: Peter Hudec
   description: /etc/sudoers.d management role
   license: BSD
-  min_ansible_version: 1.9
+  min_ansible_version: 2.0
   platforms:
   - name: EL
     versions:
     - 6
     - 7
-  - name: Fedora
+  - name: Ubuntu
     versions:
-    - 22
+    - xenial
+    - bionic
+  - name: Debian
+    versions:
+    - stretch
+    - jessie
   categories:
   - system
 dependencies: []
