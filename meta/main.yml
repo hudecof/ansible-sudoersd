@@ -18,6 +18,7 @@ galaxy_info:
     versions:
     - stretch
     - jessie
-  categories:
+  galaxy_tags:
   - system
+  - sudo
 dependencies: []
