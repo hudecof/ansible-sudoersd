@@ -1,6 +1,6 @@
 ---
 - name: Install sudo (RedHat-like)
-  yum: name=sudo state=present
+  package: name=sudo state=present
 
 - name: Create sudoers.d directory
   file:
