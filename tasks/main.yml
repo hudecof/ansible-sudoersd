@@ -1,9 +1,11 @@
 ---
 - name: Install sudo (RedHat-like)
-  package: name=sudo state=present
+  ansible.builtin.package:
+    name: sudo
+    state: present
 
 - name: Create sudoers.d directory
-  file:
+  ansible.builtin.file:
     path: /etc/sudoers.d
     owner: root
     group: root
@@ -11,14 +13,14 @@
     state: directory
 
 - name: Set includedir in sudoers
-  lineinfile:
+  ansible.builtin.lineinfile:
     dest: /etc/sudoers
     line: "#includedir /etc/sudoers.d"
     state: present
     validate: "/usr/sbin/visudo -cf %s"
 
 - name: Create sudoers
-  template:
+  ansible.builtin.template:
     src: sudoers.d.j2
     dest: "/etc/sudoers.d/{{ sudoers_filename }}"
     mode: 0440
@@ -28,7 +30,7 @@
   when: not sudoers_remove
 
 - name: Remove sudoers
-  file:
+  ansible.builtin.file:
     path: "/etc/sudoers.d/{{ sudoers_filename }}"
     state: absent
   when: sudoers_remove
