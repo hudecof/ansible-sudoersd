@@ -1,24 +1,37 @@
 ---
 galaxy_info:
   role_name: sudoersd
+  namespace: hudecof
   author: Peter Hudec
+  company: 5ok s.r.o.
   description: /etc/sudoers.d management role
   license: BSD
-  min_ansible_version: 2.0
+  min_ansible_version: 2.1
   platforms:
-  - name: EL
-    versions:
-    - 6
-    - 7
-  - name: Ubuntu
-    versions:
-    - xenial
-    - bionic
-  - name: Debian
-    versions:
-    - stretch
-    - jessie
+    - name: EL
+      versions:
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+    - name: Ubuntu
+      versions:
+        - precise
+        - trusty
+        - xenial
+        - bionic
+        - focal
+        - jammy
+    - name: Debian
+      versions:
+        - squeeze
+        - wheezy
+        - jessie
+        - stretch
+        - buster
+        - bullseye
   galaxy_tags:
-  - system
-  - sudo
+    - system
+    - sudo
 dependencies: []
